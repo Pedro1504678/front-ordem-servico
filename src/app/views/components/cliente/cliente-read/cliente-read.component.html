@@ -1,7 +1,7 @@
 <div class="create">3
-    <h1>Técnicos</h1>
-    <button (click)="navigateToCreate()" class="mat-elevation-z8" mat-stroked-button color="accent">CRIAR NOVO
-        TÉCNICO</button>
+    <h1>Cliente</h1>
+    <button class="mat-elevation-z8" mat-stroked-button color="accent">CRIAR NOVO
+        CLIENTE</button>
 </div>
 
 
@@ -35,10 +35,10 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef> Ações </th>
             <td mat-cell *matCellDef="let element">
-                <a routerLink="update/{{element.id}}">
+                <a routerLink="/">
                     <i id="edit" class="material-icons">edit</i>
                 </a>
-                <a routerLink="delete/{{element.id}}">
+                <a routerLink="/">
                     <i id="delete" class="material-icons">delete</i>
                 </a>
             </td>
