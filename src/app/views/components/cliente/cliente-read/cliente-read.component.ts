@@ -13,10 +13,10 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ClienteReadComponent implements AfterViewInit {
 
-  Clientes: Cliente[] = [];
+  cliente: Cliente[] = [];
 
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'telefone', 'action'];
-  dataSource = new MatTableDataSource<Cliente>(this.Clientes);
+  dataSource = new MatTableDataSource<Cliente>(this.cliente);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -30,8 +30,8 @@ export class ClienteReadComponent implements AfterViewInit {
 
   findAll(): void {
     this.service.findAll().subscribe((resposta) => {
-      this.Clientes = resposta;
-      this.dataSource = new MatTableDataSource<Cliente>(this.Clientes);
+      this.cliente = resposta;
+      this.dataSource = new MatTableDataSource<Cliente>(this.cliente);
       this.dataSource.paginator = this.paginator;
 
     })
@@ -39,7 +39,7 @@ export class ClienteReadComponent implements AfterViewInit {
   }
 
   navigateToCreate(): void {
-    this.router.navigate(['Clientes/create'])
+    this.router.navigate(['clientes/create'])
 
   }
 }
